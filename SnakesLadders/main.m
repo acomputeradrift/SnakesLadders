@@ -22,14 +22,21 @@ int main(int argc, const char * argv[]) {
         
         
         //NSInteger entered = [coach.players count];
-        //while (entered = 0){
-            
+        while ([coach.players count] == 0){
+//        BOOL didTheyInputValidNumber = NO;
+//        while (didTheyInputValidNumber == NO) {
+        
             NSString *inputStringForNumberofPlayers = [inputHandler userInputForPrompt:@"How many players?:"];
-            int numberOfPlayers = [inputStringForNumberofPlayers intValue];
-            
-            [coach createPlayer:numberOfPlayers];
-            NSLog(@"\n%@",[coach.players componentsJoinedByString:@" "]);
-        //}
+           int numberOfPlayers = [inputStringForNumberofPlayers intValue];
+//            if (numberOfPlayers != nil){
+                [coach createPlayer:numberOfPlayers];
+                NSLog(@"\n%@",[coach.players componentsJoinedByString:@" "]);
+//                didTheyInputValidNumber = YES;
+//            }
+//            else{
+//                didTheyInputValidNumber = NO;
+//            }
+      }
         
         while (jamie.youWin == NO) {
         

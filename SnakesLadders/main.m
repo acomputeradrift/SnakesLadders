@@ -17,12 +17,19 @@ int main(int argc, const char * argv[]) {
         PlayerManager *coach = [[PlayerManager alloc] init];
         InputHandler *inputHandler = [[InputHandler alloc] init];
         
-        //---------Number of players
-        NSString *inputStringForNumberofPlayers = [inputHandler userInputForPrompt:@"How many players?:"];
-        int numberOfPlayers = [inputStringForNumberofPlayers intValue];
         
-        [coach createPlayer:numberOfPlayers];
-        NSLog(@"\n%@",[coach.players componentsJoinedByString:@" "]);
+        //---------Number of players
+        
+        
+        //NSInteger entered = [coach.players count];
+        //while (entered = 0){
+            
+            NSString *inputStringForNumberofPlayers = [inputHandler userInputForPrompt:@"How many players?:"];
+            int numberOfPlayers = [inputStringForNumberofPlayers intValue];
+            
+            [coach createPlayer:numberOfPlayers];
+            NSLog(@"\n%@",[coach.players componentsJoinedByString:@" "]);
+        //}
         
         while (jamie.youWin == NO) {
         

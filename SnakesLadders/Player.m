@@ -41,16 +41,23 @@
 - (void)roll{
     self.currentValue = arc4random_uniform(6)+1;
     self.currentSquare = self.currentSquare + self.currentValue;
-    NSLog(@"Your roll :\n%d",self.currentValue);
+    NSLog(@"You rolled a %d and landed on space number %ld",self.currentValue, (long)self.currentSquare);
     //jamie.currentSquare =0;
-    NSLog (@"You are on space number %ld", (long)self.currentSquare);
+    //NSLog (@"You are on space number %ld", (long)self.currentSquare);
     if (self.currentSquare >= 100){
-        NSLog (@"You win");
+        NSLog (@"You win!");
+        self.youWin = YES;
+        
     }
    NSNumber *currentSquareObject = self.playerDictionary[[NSNumber numberWithInteger:self.currentSquare]];
     if (currentSquareObject){
-        NSLog (@"snake or ladder dude");
+        
         NSInteger currentSquareInteger = [currentSquareObject integerValue];
+        if (currentSquareInteger > self.currentSquare){
+            NSLog (@"You took a ladder up to %li!", (long)currentSquareInteger);
+        }else{
+            NSLog (@"Oh crap! You rode a snake down to %li.", (long)currentSquareInteger);
+        }
         self.currentSquare = currentSquareInteger;
     }
 //    NSNumber *endValue = [self.playerDictionary objectForKey:currentSquareObject];

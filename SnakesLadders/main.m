@@ -14,7 +14,7 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Player *jamie = [[Player alloc] init];
         
-        while (TRUE) {
+        while (jamie.youWin == NO) {
             
             InputHandler *inputHandler = [[InputHandler alloc] init];
        

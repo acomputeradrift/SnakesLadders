@@ -13,6 +13,7 @@
 @property NSInteger currentSquare;
 @property int currentValue;
 @property NSDictionary *playerDictionary;
+@property BOOL youWin;
 
 
 

@@ -9,25 +9,28 @@
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
 #import "Player.h"
+#import "PlayerManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Player *jamie = [[Player alloc] init];
+        PlayerManager *coach = [[PlayerManager alloc] init];
+        InputHandler *inputHandler = [[InputHandler alloc] init];
+        
+        //---------Number of players
+        NSString *inputStringForNumberofPlayers = [inputHandler userInputForPrompt:@"How many players?:"];
+        int numberOfPlayers = [inputStringForNumberofPlayers intValue];
+        
+        [coach createPlayer:numberOfPlayers];
+        NSLog(@"\n%@",[coach.players componentsJoinedByString:@" "]);
         
         while (jamie.youWin == NO) {
-            
-            InputHandler *inputHandler = [[InputHandler alloc] init];
-       
-            
-            NSString *inputString = [inputHandler userInputForPrompt:@"Please roll the die:"];
-            
-            if ([inputString isEqualToString:@"roll"]||[inputString isEqualToString:@"r"]){
+        
+            //---------Roll
+            NSString *inputStringForRoll = [inputHandler userInputForPrompt:@"Please roll the die:"];
+            if ([inputStringForRoll isEqualToString:@"roll"]||[inputStringForRoll isEqualToString:@"r"]){
                 
                 [jamie roll];
-//                NSLog(@"Your roll :\n%d",jamie.currentValue);
-//                //jamie.currentSquare =0;
-//                NSLog (@"You are on space number %ld", (long)jamie.currentSquare);
-                
                 
             }else {
                 NSLog(@"Incorrect input, dumbass!");

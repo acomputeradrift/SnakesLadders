@@ -14,6 +14,7 @@
 @property int currentValue;
 @property NSDictionary *playerDictionary;
 @property BOOL youWin;
+@property NSString *name;
 
 
 

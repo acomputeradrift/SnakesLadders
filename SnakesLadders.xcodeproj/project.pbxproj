@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7DD296E221179A7F00C92B64 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD296E121179A7F00C92B64 /* main.m */; };
 		7DD296EA21179E4800C92B64 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD296E821179E4800C92B64 /* InputHandler.m */; };
-		7DD296ED21179F5200C92B64 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD296EC21179F5100C92B64 /* Dice.m */; };
+		7DD296F02117A89200C92B64 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD296EF2117A89200C92B64 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,8 +29,8 @@
 		7DD296E121179A7F00C92B64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7DD296E821179E4800C92B64 /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 		7DD296E921179E4800C92B64 /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
-		7DD296EB21179F5100C92B64 /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
-		7DD296EC21179F5100C92B64 /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
+		7DD296EE2117A89200C92B64 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		7DD296EF2117A89200C92B64 /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +65,9 @@
 			children = (
 				7DD296E921179E4800C92B64 /* InputHandler.h */,
 				7DD296E821179E4800C92B64 /* InputHandler.m */,
-				7DD296EB21179F5100C92B64 /* Dice.h */,
-				7DD296EC21179F5100C92B64 /* Dice.m */,
 				7DD296E121179A7F00C92B64 /* main.m */,
+				7DD296EE2117A89200C92B64 /* Player.h */,
+				7DD296EF2117A89200C92B64 /* Player.m */,
 			);
 			path = SnakesLadders;
 			sourceTree = "<group>";
@@ -128,7 +128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DD296ED21179F5200C92B64 /* Dice.m in Sources */,
+				7DD296F02117A89200C92B64 /* Player.m in Sources */,
 				7DD296E221179A7F00C92B64 /* main.m in Sources */,
 				7DD296EA21179E4800C92B64 /* InputHandler.m in Sources */,
 			);

@@ -8,21 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import "InputHandler.h"
-#import "Dice.h"
+#import "Player.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        Player *jamie = [[Player alloc] init];
         
         while (TRUE) {
             
             InputHandler *inputHandler = [[InputHandler alloc] init];
-            Dice *die = [[Dice alloc] init];
+       
             
             NSString *inputString = [inputHandler userInputForPrompt:@"Please roll the die:"];
             
             if ([inputString isEqualToString:@"roll"]||[inputString isEqualToString:@"r"]){
-                [die roll];
-                NSLog(@"Your roll :\n%@",[die description]);
+                
+                [jamie roll];
+//                NSLog(@"Your roll :\n%d",jamie.currentValue);
+//                //jamie.currentSquare =0;
+//                NSLog (@"You are on space number %ld", (long)jamie.currentSquare);
+                
+                
             }else {
                 NSLog(@"Incorrect input, dumbass!");
             }

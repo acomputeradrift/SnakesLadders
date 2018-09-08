@@ -53,8 +53,8 @@ int main(int argc, const char * argv[]) {
                     whosTurn --;
                 }
             }
-            NSString *inputStringForNewGame = [inputHandler userInputForPrompt:@"Anyone up for a new game? (Y/N):"];
-            if ([inputStringForNewGame isEqualToString:@"y"]) {
+            NSString *inputStringForNewGame = [inputHandler userInputForPrompt:@"Anyone up for a new game? (Quit/Restart):"];
+            if ([inputStringForNewGame isEqualToString:@"Restart"]||[inputStringForNewGame isEqualToString:@"restart"]) {
                 newGame = YES;
             }else{
                 newGame = NO;

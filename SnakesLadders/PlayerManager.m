@@ -28,10 +28,14 @@
         NSString *playerNumberString = [playerString stringByAppendingString:[NSString stringWithFormat:@"%d", count]];
         thisPlayer.name = playerNumberString;
         //NSLog(@"Created %@", playerNumberString);
-        [self.players addObject:playerNumberString];
-        
-        
+        [self.players addObject:thisPlayer];
     }
 }
+- (void)roll{
+    //increment self.currentIndex by one for every roll.  must set to zero somewhere
+}
+//- (Player *)currentPlayer {
+//    return 
+//}
 
 @end

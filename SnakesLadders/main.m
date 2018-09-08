@@ -16,6 +16,7 @@ int main(int argc, const char * argv[]) {
         Player *jamie = [[Player alloc] init];
         PlayerManager *coach = [[PlayerManager alloc] init];
         InputHandler *inputHandler = [[InputHandler alloc] init];
+        int turn = -1;
         
         
         //---------Number of players
@@ -23,31 +24,35 @@ int main(int argc, const char * argv[]) {
         
         //NSInteger entered = [coach.players count];
         while ([coach.players count] == 0){
-//        BOOL didTheyInputValidNumber = NO;
-//        while (didTheyInputValidNumber == NO) {
-        
             NSString *inputStringForNumberofPlayers = [inputHandler userInputForPrompt:@"How many players?:"];
-           int numberOfPlayers = [inputStringForNumberofPlayers intValue];
-//            if (numberOfPlayers != nil){
-                [coach createPlayer:numberOfPlayers];
-                NSLog(@"\n%@",[coach.players componentsJoinedByString:@" "]);
-//                didTheyInputValidNumber = YES;
-//            }
-//            else{
-//                didTheyInputValidNumber = NO;
-//            }
-      }
+            int numberOfPlayers = [inputStringForNumberofPlayers intValue];
+            [coach createPlayer:numberOfPlayers];
+            //NSLog(@"\n%@",[coach.players componentsJoinedByString:@" "]);
+            
+        }
         
         while (jamie.youWin == NO) {
-        
+            
             //---------Roll
-            NSString *inputStringForRoll = [inputHandler userInputForPrompt:@"Please roll the die:"];
+             //if turn < array count-1 then turn = turn +1 else turn = 0
+            if (turn < coach.players.count-1){
+                turn ++;
+            }else{
+                turn = 0;
+            }
+            Player *currentPlayer = [coach.players objectAtIndex:turn];
+            //grab the first person from the array
+            NSString *inputStringForRoll = [inputHandler userInputForPrompt:[NSString stringWithFormat: @"%@, please roll the die:", currentPlayer.name]];
             if ([inputStringForRoll isEqualToString:@"roll"]||[inputStringForRoll isEqualToString:@"r"]){
                 
-                [jamie roll];
+                [currentPlayer roll];
+                
+            }else if ([inputStringForRoll isEqualToString:@"quit"]||[inputStringForRoll isEqualToString:@"q"]){
+                [currentPlayer quitGame:currentPlayer];
                 
             }else {
                 NSLog(@"Incorrect input, dumbass!");
+                turn --;
             }
         }
     }

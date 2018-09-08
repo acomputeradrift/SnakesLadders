@@ -67,9 +67,19 @@
     //NSNumber *value = [self.playerDictionary[(void)(%@), currentSquareObject];
         
 
+- (void)quitGame: (Player*)player{
+     PlayerManager *coach = [[PlayerManager alloc] init];
+//     while ([coach.players count] > 0){
+//         if ([coach.players containsObject:player]){
+//             
+//         }
+         //if player is = to players[i
+     //}
     
-    
-
+    //how do I remove the specific player from the array?
+    //if player count = 0
+//}
+}
 - (NSString *)description
 {
     NSArray *dicePictures = @[@"⚀", @"⚁", @"⚂", @"⚃", @"⚄", @"⚅"];

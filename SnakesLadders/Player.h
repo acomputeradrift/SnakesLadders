@@ -7,17 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PlayerManager.h"
 
 @interface Player : NSObject
 
-@property NSInteger currentSquare;
+@property (nonatomic, assign) NSInteger currentSquare;
 @property int currentValue;
-@property NSDictionary *playerDictionary;
+@property (nonatomic, strong) NSDictionary *playerDictionary;
 @property BOOL youWin;
-@property NSString *name;
+@property (nonatomic, strong) NSString *name;
+
 
 
 
 - (void)roll;
+- (void)quitGame: (Player*)player;
 
 @end

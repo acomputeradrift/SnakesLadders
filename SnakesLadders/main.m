@@ -13,10 +13,10 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        Player *jamie = [[Player alloc] init];
+        Player *currentPlayer = [[Player alloc] init];
         PlayerManager *coach = [[PlayerManager alloc] init];
         InputHandler *inputHandler = [[InputHandler alloc] init];
-        int turn = -1;
+        int whosTurn = -1;
         
         
         //---------Number of players
@@ -31,16 +31,15 @@ int main(int argc, const char * argv[]) {
             
         }
         
-        while (jamie.youWin == NO) {
+        while (currentPlayer.youWin == NO) {
             
-            //---------Roll
-             //if turn < array count-1 then turn = turn +1 else turn = 0
-            if (turn < coach.players.count-1){
-                turn ++;
+            //---------GamePlay
+            if (whosTurn < coach.players.count-1){
+                whosTurn ++;
             }else{
-                turn = 0;
+                whosTurn = 0;
             }
-            Player *currentPlayer = [coach.players objectAtIndex:turn];
+            currentPlayer = [coach.players objectAtIndex:whosTurn];
             //grab the first person from the array
             NSString *inputStringForRoll = [inputHandler userInputForPrompt:[NSString stringWithFormat: @"%@, please roll the die:", currentPlayer.name]];
             if ([inputStringForRoll isEqualToString:@"roll"]||[inputStringForRoll isEqualToString:@"r"]){
@@ -48,11 +47,11 @@ int main(int argc, const char * argv[]) {
                 [currentPlayer roll];
                 
             }else if ([inputStringForRoll isEqualToString:@"quit"]||[inputStringForRoll isEqualToString:@"q"]){
-                [currentPlayer quitGame:currentPlayer];
+                [currentPlayer quitGame:whosTurn];
                 
             }else {
                 NSLog(@"Incorrect input, dumbass!");
-                turn --;
+                whosTurn --;
             }
         }
     }

@@ -21,6 +21,6 @@
 
 
 - (void)roll;
-- (void)quitGame: (Player*)player;
+- (void)quitGame: (int)whosTurn :(NSMutableArray*)players;
 
 @end
